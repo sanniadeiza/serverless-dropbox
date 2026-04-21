@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { uploadData } from 'aws-amplify/storage';
-import { FiFolderPlus, FiUploadCloud, FiChevronRight, FiHome } from 'react-icons/fi';
+import { FiFolderPlus, FiChevronRight, FiHome } from 'react-icons/fi';
 import FileUpload from './FileUpload';
 import FileList from './FileList';
 import './Dashboard.css';

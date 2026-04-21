@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getUrl, remove } from 'aws-amplify/storage';
-import { FiX, FiDownload, FiTrash2, FiShare2, FiClock, FiFile } from 'react-icons/fi';
+import { FiX, FiDownload, FiTrash2, FiShare2, FiFile } from 'react-icons/fi';
 import './FileDetails.css';
 
 function FileDetails({ item, onClose, onRefresh }) {

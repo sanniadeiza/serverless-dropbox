@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { list, remove } from 'aws-amplify/storage';
-import { FiFile, FiFolder, FiTrash2, FiDownload, FiMoreHorizontal } from 'react-icons/fi';
+import { FiFile, FiFolder, FiTrash2, FiMoreHorizontal } from 'react-icons/fi';
 import FileDetails from './FileDetails';
 import './FileList.css';
 

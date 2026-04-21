@@ -1,4 +1,4 @@
-import { FiHome, FiFileText, FiImage, FiUsers, FiUser, FiLogOut } from 'react-icons/fi';
+import { FiHome, FiUser, FiLogOut } from 'react-icons/fi';
 import './Sidebar.css';
 
 function Sidebar({ currentView, setCurrentView, signOut, user }) {
