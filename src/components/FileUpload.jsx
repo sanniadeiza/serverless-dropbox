@@ -3,7 +3,7 @@ import { uploadData } from 'aws-amplify/storage';
 import { FiUploadCloud } from 'react-icons/fi';
 import './FileUpload.css';
 
-function FileUpload({ onUploadComplete }) {
+function FileUpload({ onUploadComplete, currentPath }) {
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   const fileInputRef = useRef(null);
@@ -16,8 +16,21 @@ function FileUpload({ onUploadComplete }) {
     setProgress(0);
 
     try {
+      // Create versioned key: filename__v123456789.ext
+      const lastDotIndex = file.name.lastIndexOf('.');
+      let nameWithoutExt = file.name;
+      let ext = '';
+      if (lastDotIndex !== -1) {
+        nameWithoutExt = file.name.substring(0, lastDotIndex);
+        ext = file.name.substring(lastDotIndex);
+      }
+      
+      const timestamp = Date.now();
+      const versionedName = `${nameWithoutExt}__v${timestamp}${ext}`;
+      const uploadKey = `${currentPath}${versionedName}`;
+
       const uploadTask = uploadData({
-        key: file.name,
+        key: uploadKey,
         data: file,
         options: {
           accessLevel: 'private',
@@ -52,9 +65,9 @@ function FileUpload({ onUploadComplete }) {
         style={{ display: 'none' }}
         id="file-upload-input"
       />
-      <label htmlFor="file-upload-input" className={`upload-button ${isUploading ? 'uploading' : ''}`}>
-        <FiUploadCloud size={20} />
-        <span>{isUploading ? `Uploading... ${progress}%` : 'Upload File'}</span>
+      <label htmlFor="file-upload-input" className={`btn-primary upload-button ${isUploading ? 'uploading' : ''}`}>
+        <FiUploadCloud size={18} />
+        <span>{isUploading ? `Uploading... ${progress}%` : 'Upload'}</span>
         {isUploading && (
           <div className="progress-bar-container">
             <div className="progress-bar" style={{ width: `${progress}%` }}></div>

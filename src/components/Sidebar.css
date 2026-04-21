@@ -1,0 +1,112 @@
+.sidebar {
+  width: 240px;
+  background-color: #f7f9fa;
+  border-right: 1px solid #e5e8eb;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.sidebar-logo h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 0 12px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #e5e8eb;
+}
+
+.nav-item.active {
+  background-color: #e5e8eb;
+  color: #0061FF;
+}
+
+.nav-icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid #e5e8eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  max-width: 150px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: #0061FF;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-email {
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.signout-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signout-btn:hover {
+  background-color: #e5e8eb;
+  color: #1e1e1e;
+}

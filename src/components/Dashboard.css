@@ -1,34 +1,85 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  animation: fadeIn 0.5s ease-out;
+  height: 100%;
 }
 
-.dashboard-header {
+.dashboard-topbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #e5e8eb;
+  background-color: #fff;
+  min-height: 40px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e1e1e;
+}
+
+.breadcrumb-item {
+  display: flex;
   align-items: center;
 }
 
-.dashboard-header h2 {
-  margin: 0;
-  font-size: 2rem;
-  color: var(--text-primary);
-  font-weight: 700;
-  letter-spacing: -0.5px;
+.breadcrumb-link {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  background-color: #f0f2f5;
+}
+
+.home-icon {
+  margin-right: 4px;
+  color: #666;
+}
+
+.chevron {
+  margin: 0 4px;
+  color: #c1c9d2;
+}
+
+.dashboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-folder-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-folder-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-folder-form input {
+  padding: 8px 12px;
+  border: 1px solid #c1c9d2;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.create-folder-form input:focus {
+  border-color: #0061FF;
 }
 
 .dashboard-content {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-color);
-  min-height: 400px;
+  flex: 1;
   overflow: hidden;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  position: relative;
 }
