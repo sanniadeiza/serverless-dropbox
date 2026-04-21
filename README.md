@@ -1,61 +1,42 @@
-# Serverless Dropbox Clone
+# Welcome to My Backend Dropbox
+***
 
-A fully hosted serverless file synchronization application built with ReactJS, Vite, and AWS Amplify (Gen 2).
+## Task
+The goal of this project was to build a fully hosted, serverless file synchronization service (a Dropbox clone) with user authentication, file uploading, versioning, and DNS/routing. The main challenge was integrating a serverless backend architecture to handle load and scaling automatically without managing traditional servers, while connecting it securely to a modern, responsive ReactJS frontend.
 
-## Features
-- **User Authentication:** Secure sign-up, sign-in, and password management powered by Amazon Cognito.
-- **File Upload:** Upload files to your personal, isolated cloud storage (Amazon S3).
-- **Versioning:** Files are tracked with their last modified timestamp to manage versions. (Note: S3 Bucket Versioning can be fully utilized via AWS console).
-- **DNS/Routing:** Hosted in the cloud using AWS Amplify Console.
-- **Premium Design:** Clean, modern, and responsive user interface.
+## Description
+I solved this problem by utilizing AWS Amplify Gen 2 to define our infrastructure as code. The frontend is built with ReactJS and Vite, featuring a premium glassmorphism design where each component has its own associated CSS file. 
 
-## Architecture
-This project uses AWS Amplify Gen 2, which provides a code-first approach to fullstack development.
-- **Frontend:** React, Vite, CSS
-- **Backend:** 
-  - Amazon Cognito (Auth)
-  - Amazon S3 (Storage)
-  - Managed via `amplify/backend.ts`
+The backend handles user authentication securely via Amazon Cognito and provides private, isolated file storage for each user via Amazon S3. The entire application is deployed and hosted using the AWS Amplify Console, which handles our DNS and continuous routing.
 
-## Deployment Instructions
+**Deployed URL:** [Insert your Amplify Console URL here]
 
-To deploy this application to the cloud and get a live URL:
+## Installation
+To set up this project locally, clone the repository and install the necessary dependencies using Node Package Manager:
 
-### 1. Prerequisites
-- An AWS Account
-- Node.js (v18+)
-- A GitHub account
+```bash
+git clone https://github.com/sanniadeiza/serverless-dropbox.git
+cd serverless-dropbox
+npm install
+```
 
-### 2. Local Setup
-1. Clone or download this repository.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## Usage
+To run the project locally and interact with your AWS backend:
 
-### 3. Deploy via AWS Amplify Console (Recommended)
-This will set up continuous deployment and provide a public URL.
+First, spin up a temporary cloud sandbox environment for your backend resources:
+```bash
+npx ampx sandbox
+```
 
-1. Push this code to a GitHub repository.
-2. Log in to the [AWS Console](https://console.aws.amazon.com/).
-3. Navigate to **AWS Amplify**.
-4. Click **Create new app**.
-5. Connect your GitHub repository and select the branch you pushed to.
-6. Amplify will automatically detect the Gen 2 backend (`amplify/backend.ts`) and the Vite frontend.
-7. Click **Save and deploy**.
+Then, open a new terminal window and start the local React development server:
+```bash
+npm run dev
+```
 
-Once deployed, AWS Amplify will provide a public URL (e.g., `https://main.xxxxxxx.amplifyapp.com`) which will handle the DNS/Routing.
+Open `http://localhost:5173` in your browser. You can create an account, verify your email, and start securely uploading and managing your files!
 
-**Project URL:** _[Your deployed URL will go here after following the steps above]_
+### The Core Team
+Sanni Adeiza
 
-## Running Locally
-
-If you want to test the UI locally before deploying:
-1. Run a sandbox environment to provision temporary cloud resources:
-   ```bash
-   npx ampx sandbox
-   ```
-2. In a separate terminal, start the Vite development server:
-   ```bash
-   npm run dev
-   ```
+<span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
+<span><img alt='Qwasar SV -- Software Engineering School's Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
